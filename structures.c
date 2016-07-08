@@ -977,11 +977,7 @@ struct tgl_webpage *tglf_fetch_alloc_webpage (struct tgl_state *TLS, struct tl_d
   
   struct tgl_webpage *W = tgl_webpage_get (TLS, DS_LVAL (DS_W->id));
   if (W) {
-    W->refcnt ++;
-  } else {
-    W = talloc0 (sizeof (*W));
-    W->id = DS_LVAL (DS_W->id);
-    W->refcnt = 1;
+
   
     tgl_webpage_insert (TLS, W);
   }
